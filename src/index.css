@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.category-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;   /* prevents overflow */
+}
+
+.category-bar button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #6c5ce7;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 6px;          /* 🔥 space between icon + text */
+}
