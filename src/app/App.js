@@ -2,17 +2,12 @@ import React, { useState } from "react";
 import ProductList from "../components/ProductList";
 import Cart from "../components/Cart";
 import "./App.css";
-import { products } from "../data/products"; // ✅ use this only
+import { products } from "../data/products";
 
 function App() {
   const [cart, setCart] = useState([]);
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [search, setSearch] = useState("");
-
-  // 🔍 filter products (search + category will both work)
-  const filteredProducts = products.filter((p) =>
-    p.name.toLowerCase().includes(search.toLowerCase())
-  );
 
   // ➕ add to cart
   const addToCart = (product) => {
@@ -103,10 +98,11 @@ function App() {
 
       <div className="main">
 
-        {/* ✅ Products */}
+        {/* ✅ Products (NO filtering here anymore) */}
         <ProductList
-          products={filteredProducts}
+          products={products}   // 🔥 full data
           addToCart={addToCart}
+          search={search}       // 🔥 pass search
         />
 
         {/* ✅ Cart */}
